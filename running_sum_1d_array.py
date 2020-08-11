@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/running-sum-of-1d-array/
+
 def running_sum(nums: list) -> list:
     sum_list = []
     sum = 0
