@@ -1,7 +1,9 @@
+# https://leetcode.com/problems/shuffle-the-array/submissions/
+
 def shuffle(nums, n):
     if len(nums) == 0:
         return list()
-        
+
     s_list = []
     p1 = 0
     p2 = n

@@ -29,12 +29,12 @@ def angleClock(hour, minutes):
 
 
 if __name__ == '__main__':
-    # print( angleClock(12, 30) )
-    # print( angleClock(3, 30) )
-    # print( angleClock(3, 15) )
-    # print( angleClock(12, 0) )
-    # print( angleClock(6,5) )
-    # print( angleClock(1,4) )
+    print( angleClock(12, 30) )
+    print( angleClock(3, 30) )
+    print( angleClock(3, 15) )
+    print( angleClock(12, 0) )
+    print( angleClock(6,5) )
+    print( angleClock(1,4) )
 
-    # print( angleClock(1, 57) )
+    print( angleClock(1, 57) )
     print( angleClock(8, 7) )
