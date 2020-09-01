@@ -2,39 +2,36 @@
 # Using DFS (DFS uses recursion here)
 
 class Solution:
-    def isValid(self, A, row, col):
-        if row < 0 or row >= len(A) or col < 0 or col >= len(A[0]):
-            return False
-        return True
+    def numIslands(self, grid) -> int:
 
-    def dfs(self, A, i, j, vis):
-        vis[i][j] = True
+        island_count = 0
 
-        row = [-1, 0, 1, 0]
-        col = [0, -1, 0, 1]
+        for i, _ in enumerate(grid):
+            for j, _ in enumerate(grid[i]):
+                if grid[i][j] == '1':
+                    self.dfs(i, j, grid)
+                    island_count += 1
 
-        for r, c in zip(row, col):
-            nRow = i + r
-            nCol = j + c
+        return island_count
 
-            if self.isValid(A, nRow, nCol) and A[nRow][nCol] == '1' and not vis[nRow][nCol]:
-                vis[nRow][nCol] = True
-                self.dfs(A, nRow, nCol, vis)
 
-    def numIslands(self,A):
-        if not A: return 0
-        m = len(A)
-        n = len(A[0])
-        vis = [[False] * n for _ in range(m)]
+    def dfs(self, i, j, grid):
 
-        count = 0
-        for i in range(m):
-            for j in range(n):
-                if not vis[i][j] and A[i][j] == '1':
-                    self.dfs(A,i,j,vis)
-                    count += 1
+        if i < 0 or i >= len(grid):
+            return
 
-        return count
+        if j < 0 or j >= len(grid[0]):
+            return
+
+        if grid[i][j] == '0':
+            return
+
+        grid[i][j] = '0'
+
+        self.dfs(i - 1, j, grid)
+        self.dfs(i + 1, j, grid)
+        self.dfs(i, j - 1, grid)
+        self.dfs(i, j + 1, grid)
     
 
 if __name__ == "__main__":
