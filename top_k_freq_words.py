@@ -23,7 +23,6 @@ class Solution:
                 freq_list.append(min(hash_map))
                 del hash_map[min(hash_map)]
             else:
-                # most_freq_word = max(hash_map.items(), key = lambda k: k[1])
                 max_val = 0
                 most_freq_word = ''
                 for i in hash_map.items():
